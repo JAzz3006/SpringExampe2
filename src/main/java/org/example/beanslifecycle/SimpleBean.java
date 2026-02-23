@@ -1,7 +1,7 @@
 package org.example.beanslifecycle;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 public class SimpleBean {
@@ -13,5 +13,10 @@ public class SimpleBean {
     @PostConstruct
     public void afterInit(){
         System.out.println("SimpleBean calling afterInit");
+    }
+
+    @PreDestroy
+    public void beforeDestroy(){
+        System.out.println("Simple bean calling beforeDestroy");
     }
 }
